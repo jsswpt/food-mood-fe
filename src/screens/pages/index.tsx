@@ -1,5 +1,11 @@
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom'
 
+import { ForgotPassword } from './authorization/forgot-password/index'
+import { NewPassword } from './authorization/forgot-password/new-password'
+import { ForgotPasswordOtp } from './authorization/forgot-password/otp'
+import { SignIn } from './authorization/sign-in'
+import { SignUp } from './authorization/sign-up/index'
+import { SignUpOtp } from './authorization/sign-up/otp'
 import { IntroductionFirstStep } from './introduction/first'
 import { IntroductionFourthStep } from './introduction/fourth'
 import { IntroductionSecondStep } from './introduction/second'
@@ -34,65 +40,46 @@ const routeConfig: RouteObject[] = [
   // Authorization
   {
     children: [
+      // Sign in
       {
-        element: 'Sign-in',
-        path: 'sign-in',
+        element: <SignIn />,
+        index: true,
       },
+      // Sign up
       {
         children: [
+          // Sign up index
           {
-            element: 'Sign-up',
+            element: <SignUp />,
             index: true,
           },
+          // Sign up OTP
           {
-            element: 'Enter OTP',
+            element: <SignUpOtp />,
             path: 'otp',
           },
         ],
-        element: (
-          <div>
-            <h1>Sign-up</h1>
-            <div>
-              <Outlet />
-            </div>
-          </div>
-        ),
+        element: <Outlet />,
         path: 'sign-up',
       },
+      // Forgot password
       {
         children: [
-          { element: 'Forgot password', index: true },
-          { element: 'OTP Sent', path: 'otp' },
+          // Forgot password index
+          { element: <ForgotPassword />, index: true },
+          // Forgot password OTP
+          { element: <ForgotPasswordOtp />, path: 'otp' },
+          // New password
           {
-            children: [
-              {
-                element: 'Success',
-                path: 'success',
-              },
-            ],
-            element: 'New password',
+            element: <NewPassword />,
             path: 'new-password',
           },
         ],
-        element: (
-          <div>
-            <h1>Forgot password</h1>
-            <div>
-              <Outlet />
-            </div>
-          </div>
-        ),
+        element: <Outlet />,
         path: 'forgot-password',
       },
     ],
-    element: (
-      <div>
-        <h1>Authorization</h1>
-        <div>
-          <Outlet />
-        </div>
-      </div>
-    ),
+    element: <Outlet />,
     path: '/authorization',
   },
   // App
