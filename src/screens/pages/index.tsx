@@ -1,5 +1,22 @@
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom'
 
+import { CategoriesCategory } from './app/categories/category'
+import { CategoriesIndex } from './app/categories/index'
+import { CheckoutAddress } from './app/checkout/address'
+import { CheckoutCheck } from './app/checkout/check'
+import { CheckoutPayment } from './app/checkout/payment'
+import { AppIndex } from './app/index'
+import { ProductsIndex } from './app/products/index'
+import { ProductsProduct } from './app/products/product'
+import { ProfileAddresses } from './app/profile/addresses'
+import { ProfileCart } from './app/profile/cart'
+import { ProfileFavorites } from './app/profile/favorites'
+import { ProfileIndex } from './app/profile/index'
+import { ProfileOrdersIndex } from './app/profile/orders/index'
+import { ProfileOrdersOrder } from './app/profile/orders/order'
+import { ProfilePersonal } from './app/profile/personal'
+import { SearchIndex } from './app/search/index'
+import { SearchResults } from './app/search/results'
 import { ForgotPassword } from './authorization/forgot-password/index'
 import { NewPassword } from './authorization/forgot-password/new-password'
 import { ForgotPasswordOtp } from './authorization/forgot-password/otp'
@@ -87,7 +104,7 @@ const routeConfig: RouteObject[] = [
     children: [
       // Home
       {
-        element: 'Index',
+        element: <AppIndex />,
         index: true,
       },
       // Categories
@@ -95,12 +112,12 @@ const routeConfig: RouteObject[] = [
         children: [
           // Categories index
           {
-            element: 'Categories',
+            element: <CategoriesIndex />,
             index: true,
           },
           // Category
           {
-            element: 'CategoryId',
+            element: <CategoriesCategory />,
             path: ':categoryId',
           },
         ],
@@ -112,12 +129,12 @@ const routeConfig: RouteObject[] = [
         children: [
           // Products index
           {
-            element: 'Products',
+            element: <ProductsIndex />,
             index: true,
           },
           // Product
           {
-            element: 'ProductId',
+            element: <ProductsProduct />,
             path: ':productId',
           },
         ],
@@ -129,12 +146,12 @@ const routeConfig: RouteObject[] = [
         children: [
           // Search index
           {
-            element: 'Search',
+            element: <SearchIndex />,
             index: true,
           },
           // Search results
           {
-            element: 'Search results',
+            element: <SearchResults />,
             path: 'results',
           },
         ],
@@ -146,17 +163,17 @@ const routeConfig: RouteObject[] = [
         children: [
           // Profile index
           {
-            element: 'Profile',
+            element: <ProfileIndex />,
             index: true,
           },
           // Cart
           {
-            element: 'Cart',
+            element: <ProfileCart />,
             path: 'cart',
           },
           // Favorites
           {
-            element: 'Favorites',
+            element: <ProfileFavorites />,
             path: 'favorites',
           },
           // Orders
@@ -164,11 +181,11 @@ const routeConfig: RouteObject[] = [
             children: [
               // Orders index
               {
-                element: 'Orders',
+                element: <ProfileOrdersIndex />,
                 index: true,
               },
               {
-                element: 'OrderId',
+                element: <ProfileOrdersOrder />,
                 path: ':orderId',
               },
             ],
@@ -177,12 +194,12 @@ const routeConfig: RouteObject[] = [
           },
           // Addresses
           {
-            element: 'Addresses',
+            element: <ProfileAddresses />,
             path: 'addresses',
           },
           // Personal
           {
-            element: 'Personal',
+            element: <ProfilePersonal />,
             path: 'personal',
           },
         ],
@@ -192,16 +209,19 @@ const routeConfig: RouteObject[] = [
       // Checkout
       {
         children: [
+          // Checkout address
           {
-            element: 'Address',
+            element: <CheckoutAddress />,
             path: 'address',
           },
+          // Checkout payment
           {
-            element: 'Payment',
+            element: <CheckoutPayment />,
             path: 'payment',
           },
+          // Checkout check
           {
-            element: 'Check',
+            element: <CheckoutCheck />,
             path: 'check',
           },
         ],
@@ -209,14 +229,7 @@ const routeConfig: RouteObject[] = [
         path: 'checkout',
       },
     ],
-    element: (
-      <div>
-        <h1>App</h1>
-        <div>
-          <Outlet />
-        </div>
-      </div>
-    ),
+    element: <Outlet />,
     path: '/',
   },
 ]
