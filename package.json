@@ -1,0 +1,50 @@
+{
+  "name": "food-mood-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "watch": "vite --port 3000",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 3001",
+    "fix:lint": "yarn eslint . --fix --cache --cache-location './node_modules/.cache/eslint/.eslint-cache'",
+    "fix:prettier": "yarn prettier . --write --cache",
+    "watch:nodemon": "nodemon --quiet --watch . -e js,json,mjs,cjs,ts,tsx,html,yml --exec",
+    "watch:lint": "yarn watch:nodemon 'yarn fix:lint'",
+    "watch:prettier": "yarn watch:nodemon 'yarn fix:prettier'",
+    "precommit": "yarn eslint .; yarn prettier . --write"
+  },
+  "dependencies": {
+    "antd": "^5.22.5",
+    "axios": "^1.7.9",
+    "effector": "^23.2.3",
+    "effector-react": "^23.3.0",
+    "formik": "^2.4.6",
+    "patronum": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.2",
+    "yup": "^1.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "eslint-plugin-sort": "^4.0.0",
+    "globals": "^15.13.0",
+    "husky": "^9.1.7",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.0",
+    "vite": "^6.0.1",
+    "vitest": "^2.1.8"
+  },
+  "packageManager": "yarn@4.5.3"
+}
