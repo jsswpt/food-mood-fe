@@ -1,5 +1,10 @@
 import { Outlet, RouteObject, useRoutes } from 'react-router-dom'
 
+import { IntroductionFirstStep } from './introduction/first'
+import { IntroductionFourthStep } from './introduction/fourth'
+import { IntroductionSecondStep } from './introduction/second'
+import { IntroductionThirdStep } from './introduction/third'
+
 import { useLocation } from '@/shared/lib/router'
 
 const routeConfig: RouteObject[] = [
@@ -7,30 +12,23 @@ const routeConfig: RouteObject[] = [
   {
     children: [
       {
-        element: '1',
+        element: <IntroductionFirstStep />,
         path: '1',
       },
       {
-        element: '2',
+        element: <IntroductionSecondStep />,
         path: '2',
       },
       {
-        element: '3',
+        element: <IntroductionThirdStep />,
         path: '3',
       },
       {
-        element: '4',
+        element: <IntroductionFourthStep />,
         path: '4',
       },
     ],
-    element: (
-      <div>
-        <div>Introduction</div>
-        <div>
-          <Outlet />
-        </div>
-      </div>
-    ),
+    element: <Outlet />,
     path: '/introduction',
   },
   // Authorization
