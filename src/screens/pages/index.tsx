@@ -28,6 +28,8 @@ import { IntroductionFourthStep } from './introduction/fourth'
 import { IntroductionSecondStep } from './introduction/second'
 import { IntroductionThirdStep } from './introduction/third'
 
+import { AuthGuard } from '@/entities/session'
+
 import { useLocation } from '@/shared/lib/router'
 
 const routeConfig: RouteObject[] = [
@@ -51,7 +53,11 @@ const routeConfig: RouteObject[] = [
         path: '4',
       },
     ],
-    element: <Outlet />,
+    element: (
+      <AuthGuard reverse>
+        <Outlet />
+      </AuthGuard>
+    ),
     path: '/introduction',
   },
   // Authorization
@@ -96,7 +102,11 @@ const routeConfig: RouteObject[] = [
         path: 'forgot-password',
       },
     ],
-    element: <Outlet />,
+    element: (
+      <AuthGuard reverse>
+        <Outlet />
+      </AuthGuard>
+    ),
     path: '/authorization',
   },
   // App
@@ -229,7 +239,11 @@ const routeConfig: RouteObject[] = [
         path: 'checkout',
       },
     ],
-    element: <Outlet />,
+    element: (
+      <AuthGuard>
+        <Outlet />
+      </AuthGuard>
+    ),
     path: '/',
   },
 ]
