@@ -1,10 +1,7 @@
-import Icon from '@ant-design/icons'
-import { Flex } from 'antd'
+import { Box, Stack } from '@mui/material'
 import { useGate, useUnit } from 'effector-react'
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-
-import st from './styles.module.scss'
 
 import {
   $isAuthorized,
@@ -13,6 +10,8 @@ import {
   gate,
 } from '@/entities/session/model'
 
+import { palette } from '@/shared/config/mui'
+import { pxToRem } from '@/shared/lib/css-formatter'
 import { Logo } from '@/shared/ui'
 
 export type AuthGuardProps = {
@@ -31,9 +30,22 @@ export const AuthGuard = ({ children, reverse }: AuthGuardProps) => {
 
   if (!isRequested || isLoading) {
     return (
-      <Flex align="center" justify="center" className={st.wrapper}>
-        <Icon component={Logo} className={st.logo} />
-      </Flex>
+      <Stack
+        alignItems="center"
+        justifyContent="center"
+        height="100svh"
+        bgcolor={({ palette }) => palette.primary.main}
+      >
+        <Stack alignItems="center" width="100%" marginBottom="15svh">
+          <Box
+            maxWidth={pxToRem(240)}
+            width="100%"
+            color={palette.primary.contrastText}
+          >
+            <Logo />
+          </Box>
+        </Stack>
+      </Stack>
     )
   }
 

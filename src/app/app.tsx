@@ -1,9 +1,9 @@
-import { AntProvider } from './providers'
+import { MuiProvider } from './providers'
 
 import { Router } from '@/screens'
 
 export const App = () => (
-  <AntProvider>
+  <MuiProvider>
     <Router />
-  </AntProvider>
+  </MuiProvider>
 )
