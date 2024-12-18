@@ -34,7 +34,7 @@ export const AuthGuard = ({ children, reverse }: AuthGuardProps) => {
         alignItems="center"
         justifyContent="center"
         height="100svh"
-        bgcolor={({ palette }) => palette.primary.main}
+        bgcolor={palette.primary.main}
       >
         <Stack alignItems="center" width="100%" marginBottom="15svh">
           <Box
