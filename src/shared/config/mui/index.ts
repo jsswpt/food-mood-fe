@@ -7,7 +7,11 @@ export const palette = {
     contrastText: '#FFF2DE',
     main: '#FF9D01',
   },
-}
+} as const
+
+export const spacing = {
+  appbarHeightXs: 64,
+} as const
 
 export const theme = createTheme({
   palette: {
@@ -19,5 +23,9 @@ export const theme = createTheme({
   },
   shape: { borderRadius: 0 },
   spacing: pxToRem,
-  typography: {},
+  typography: {
+    allVariants: {
+      lineHeight: '125%',
+    },
+  },
 })

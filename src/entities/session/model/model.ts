@@ -8,7 +8,7 @@ export const authorizeOnAppOpenFx = createEffect(authorizeOnAppOpenReq)
 
 export const $user = createStore<User | null>(null)
 
-export const $isAuthorized = $user.map((state) => !state)
+export const $isAuthorized = $user.map(Boolean)
 
 export const $isRequested = createStore(false)
 

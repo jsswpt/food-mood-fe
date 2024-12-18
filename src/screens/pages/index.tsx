@@ -27,6 +27,7 @@ import { IntroductionFirstStep } from './introduction/first'
 import { IntroductionFourthStep } from './introduction/fourth'
 import { IntroductionSecondStep } from './introduction/second'
 import { IntroductionThirdStep } from './introduction/third'
+import { AuthTemplate } from '@/layouts/auth-layout'
 
 import { AuthGuard } from '@/entities/session'
 
@@ -104,7 +105,9 @@ const routeConfig: RouteObject[] = [
     ],
     element: (
       <AuthGuard reverse>
-        <Outlet />
+        <AuthTemplate>
+          <Outlet />
+        </AuthTemplate>
       </AuthGuard>
     ),
     path: '/authorization',
