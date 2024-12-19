@@ -5,7 +5,7 @@ const delay = {
 }
 
 export const createFakeRequest = <T>(
-  cb: (res: (value: T) => void, rej: (value: any) => void) => void,
+  cb: (res: (value: T) => void, rej: (value: unknown) => void) => void,
   delaySize?: keyof typeof delay
 ) =>
   new Promise<T>((res, rej) => {

@@ -1,23 +1,24 @@
 import { useMemo } from 'react'
 import { Location, useLocation as useRouterDomLocation } from 'react-router-dom'
 
-type Query = Record<string, string>
+import { Path, Query } from './types'
 
 type UseLocation = {
   (): {
-    pagePath: string
-    modalPath?: string
+    pagePath: Path
+    modalPath?: Path
     query?: Query
     queryAsString?: string
   } & Omit<Location, 'pathname' | 'search'>
 }
 
-const removeLastSlash = (value: string) => value.substring(0, value.length - 1)
+const removeLastSlash = (value: string) =>
+  value.substring(0, value.length - 1) as Path
 
 export const useLocation: UseLocation = () => {
   const { hash, key, pathname, search, state } = useRouterDomLocation()
 
-  let [pagePath, modalPath] = pathname.split('~')
+  let [pagePath, modalPath] = pathname.split('~') as Array<Path>
 
   if (modalPath && modalPath[modalPath.length - 1] === '/') {
     modalPath = removeLastSlash(modalPath)
