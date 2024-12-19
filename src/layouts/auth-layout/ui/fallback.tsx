@@ -8,5 +8,5 @@ type FallbackProps = {
 }
 
 export const Fallback = ({ children }: FallbackProps) => (
-  <Template title={<Skeleton width="88%" />} children={children} />
+  <Template title={<Skeleton width="10rem" />} children={children} />
 )

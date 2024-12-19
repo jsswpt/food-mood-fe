@@ -6,11 +6,11 @@ const Component = lazy(() =>
   import('./component').then((m) => ({ default: m.Component }))
 )
 
-type AuthTemplateProps = {
+type AuthLayoutProps = {
   children: React.ReactNode
 }
 
-export const AuthTemplate = ({ children }: AuthTemplateProps) => (
+export const AuthLayout = ({ children }: AuthLayoutProps) => (
   <Suspense fallback={<Fallback children={children} />}>
     <Component children={children} />
   </Suspense>

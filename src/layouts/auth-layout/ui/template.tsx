@@ -17,7 +17,7 @@ export const Template = ({ children, subtitle, title }: TemplateProps) => (
     justifyContent="space-between"
     minHeight="100svh"
   >
-    <Stack gap={pxToRem(8)}>
+    <Stack alignItems="center" gap={pxToRem(8)}>
       <Typography
         component="h1"
         variant="h5"
