@@ -16,6 +16,5 @@ export const Fallback = () => (
     firstNameInput={inputSkeleton}
     lastNameInput={inputSkeleton}
     submitButton={buttonSkeleton}
-    resetButton={buttonSkeleton}
   />
 )

@@ -13,8 +13,8 @@ const buttonSkeleton = (
 
 export const Fallback = () => (
   <Template
-    firstNameInput={inputSkeleton}
-    lastNameInput={inputSkeleton}
+    passwordInput={inputSkeleton}
+    passwordConfirmation={buttonSkeleton}
     submitButton={buttonSkeleton}
     resetButton={buttonSkeleton}
   />
