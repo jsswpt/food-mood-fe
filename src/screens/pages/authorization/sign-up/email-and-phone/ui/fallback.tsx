@@ -1,3 +1,9 @@
 import { Template } from './template'
 
-export const Fallback = () => <Template isFallback />
+import { SignUpEmailAndPhone } from '@/features/authorization/sign-up/email-and-phone'
+
+export const Fallback = () => (
+  <Template>
+    <SignUpEmailAndPhone isFallback />
+  </Template>
+)

@@ -1,10 +1,12 @@
+import { Box, Container } from '@mui/material'
+import React from 'react'
+
 type TemplateProps = {
-  // TODO: удалить
-  isFallback?: boolean
+  children: React.ReactNode
 }
 
-export const Template = ({ isFallback }: TemplateProps) => (
-  <>
-    'Sign up Email and phone' template {isFallback ? 'fallback' : 'component'}
-  </>
+export const Template = ({ children }: TemplateProps) => (
+  <Box>
+    <Container>{children}</Container>
+  </Box>
 )
