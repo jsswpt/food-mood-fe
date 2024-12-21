@@ -1,3 +1,9 @@
 import { Template } from './template'
 
-export const Component = () => <Template />
+import { SignUpAvatar } from '@/features/authorization/sign-up/avatar'
+
+export const Component = () => (
+  <Template>
+    <SignUpAvatar />
+  </Template>
+)

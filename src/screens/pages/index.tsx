@@ -93,7 +93,7 @@ const routeConfig: RouteObject[] = [
           // Sign up / password
           {
             element: <SignUpPassword />,
-            path: 'avatar',
+            path: 'password',
           },
           // Sign up OTP
           {
