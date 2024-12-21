@@ -30,7 +30,7 @@ const pathToComponents: Record<
     title: 'Привязка аккаунта',
   },
   '/authorization/sign-up/password': {
-    subtitle: 'Придумайте пароль',
+    subtitle: null,
     title: 'Пароль',
   },
 }
