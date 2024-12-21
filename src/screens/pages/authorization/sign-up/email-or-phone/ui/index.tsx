@@ -6,7 +6,7 @@ const Component = lazy(() =>
   import('./component').then((m) => ({ default: m.Component }))
 )
 
-type SignUpProps =
+type SignUpEmailOrPhoneProps =
   | {
       isFallback: true
     }
@@ -14,7 +14,7 @@ type SignUpProps =
       isFallback?: false
     }
 
-export const SignUp = ({ isFallback }: SignUpProps) =>
+export const SignUpEmailOrPhone = ({ isFallback }: SignUpEmailOrPhoneProps) =>
   isFallback ? (
     <Fallback />
   ) : (

@@ -16,6 +16,10 @@ const pathToComponents: Record<
     subtitle: null,
     title: 'Вход',
   },
+  '/authorization/sign-up': {
+    subtitle: null,
+    title: 'Регистрация',
+  },
 }
 
 export const Component = ({ children }: ComponentProps) => {

@@ -21,8 +21,11 @@ import { ForgotPassword } from './authorization/forgot-password/index'
 import { NewPassword } from './authorization/forgot-password/new-password'
 import { ForgotPasswordOtp } from './authorization/forgot-password/otp'
 import { SignIn } from './authorization/sign-in'
-import { SignUp } from './authorization/sign-up/index'
+import { SignUpAvatar } from './authorization/sign-up/avatar'
+import { SignUpEmailOrPhone } from './authorization/sign-up/email-or-phone'
+import { SignUpNames } from './authorization/sign-up/names'
 import { SignUpOtp } from './authorization/sign-up/otp'
+import { SignUpPassword } from './authorization/sign-up/password'
 import { IntroductionFirstStep } from './introduction/first'
 import { IntroductionFourthStep } from './introduction/fourth'
 import { IntroductionSecondStep } from './introduction/second'
@@ -72,10 +75,25 @@ const routeConfig: RouteObject[] = [
       // Sign up
       {
         children: [
-          // Sign up index
+          // Sign up / names
           {
-            element: <SignUp />,
+            element: <SignUpNames />,
             index: true,
+          },
+          // Sign up / email or phone
+          {
+            element: <SignUpEmailOrPhone />,
+            path: 'email-or-phone',
+          },
+          // Sign up / avatar
+          {
+            element: <SignUpAvatar />,
+            path: 'avatar',
+          },
+          // Sign up / password
+          {
+            element: <SignUpPassword />,
+            path: 'avatar',
           },
           // Sign up OTP
           {
