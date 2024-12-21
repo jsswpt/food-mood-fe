@@ -6,15 +6,17 @@ const Component = lazy(() =>
   import('./component').then((m) => ({ default: m.Component }))
 )
 
-type SignUpProps =
+type Props = {}
+
+type SignUpPasswordProps =
   | {
       isFallback: true
     }
-  | {
+  | ({
       isFallback?: false
-    }
+    } & Props)
 
-export const SignUp = ({ isFallback }: SignUpProps) =>
+export const SignUpPassword = ({ isFallback }: SignUpPasswordProps) =>
   isFallback ? (
     <Fallback />
   ) : (

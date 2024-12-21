@@ -6,9 +6,11 @@ import {
 import { FilledInput, IconButton, InputAdornment } from '@mui/material'
 import { useEffect, useState } from 'react'
 
-export type PasswordInputProps = {}
+export type PasswordInputProps = {
+  placeholder?: string
+}
 
-export const PasswordInput = ({}: PasswordInputProps) => {
+export const PasswordInput = ({ placeholder }: PasswordInputProps) => {
   const [showPassword, setShowPassword] = useState(false)
 
   useEffect(() => {
@@ -40,7 +42,7 @@ export const PasswordInput = ({}: PasswordInputProps) => {
           </IconButton>
         </InputAdornment>
       }
-      placeholder="Введите пароль"
+      placeholder={placeholder ?? 'Введите пароль'}
       type={showPassword ? 'text' : 'password'}
       size="medium"
     />
