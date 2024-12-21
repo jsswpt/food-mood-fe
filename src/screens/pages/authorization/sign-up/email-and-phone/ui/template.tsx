@@ -4,5 +4,7 @@ type TemplateProps = {
 }
 
 export const Template = ({ isFallback }: TemplateProps) => (
-  <>'Sign up email or phone' template {isFallback ? 'fallback' : 'component'}</>
+  <>
+    'Sign up Email and phone' template {isFallback ? 'fallback' : 'component'}
+  </>
 )

@@ -20,6 +20,11 @@ const pathToComponents: Record<
     subtitle: null,
     title: 'Регистрация',
   },
+  '/authorization/sign-up/email-and-phone': {
+    subtitle:
+      'Укажите номер телефона или адрес эл. почты, либо можете указать и то и другое 🙂‍↔️',
+    title: 'Регистрация',
+  },
 }
 
 export const Component = ({ children }: ComponentProps) => {

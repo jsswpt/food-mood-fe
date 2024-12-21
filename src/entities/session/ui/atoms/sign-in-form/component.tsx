@@ -1,10 +1,9 @@
 import { EmailOutlined } from '@mui/icons-material'
 import { Button, FilledInput, InputAdornment } from '@mui/material'
 
-import { PasswordInput } from './password-input'
 import { Template } from './template'
 
-import { FormProps } from '@/shared/ui'
+import { FormProps, PasswordInput } from '@/shared/ui'
 
 type ComponentProps = {
   formProps: FormProps['formProps']

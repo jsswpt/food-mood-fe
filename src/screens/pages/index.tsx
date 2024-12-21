@@ -22,7 +22,7 @@ import { NewPassword } from './authorization/forgot-password/new-password'
 import { ForgotPasswordOtp } from './authorization/forgot-password/otp'
 import { SignIn } from './authorization/sign-in'
 import { SignUpAvatar } from './authorization/sign-up/avatar'
-import { SignUpEmailOrPhone } from './authorization/sign-up/email-or-phone'
+import { SignUpEmailAndPhone } from './authorization/sign-up/email-and-phone'
 import { SignUpNames } from './authorization/sign-up/names'
 import { SignUpOtp } from './authorization/sign-up/otp'
 import { SignUpPassword } from './authorization/sign-up/password'
@@ -82,8 +82,8 @@ const routeConfig: RouteObject[] = [
           },
           // Sign up / email or phone
           {
-            element: <SignUpEmailOrPhone />,
-            path: 'email-or-phone',
+            element: <SignUpEmailAndPhone />,
+            path: 'email-and-phone',
           },
           // Sign up / avatar
           {

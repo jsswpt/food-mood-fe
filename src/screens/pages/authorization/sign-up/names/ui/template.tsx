@@ -1,8 +1,29 @@
+import { Box, Container, Link, Typography } from '@mui/material'
+import React from 'react'
+import { Link as RouterLink } from 'react-router-dom'
+
+import { AuthFormTemplate } from '@/entities/session'
+
 type TemplateProps = {
-  // TODO: удалить
-  isFallback?: boolean
+  children: React.ReactNode
 }
 
-export const Template = ({ isFallback }: TemplateProps) => (
-  <>'Sign up names' template {isFallback ? 'fallback' : 'component'}</>
+export const Template = ({ children }: TemplateProps) => (
+  <Box>
+    <Container>
+      <AuthFormTemplate
+        dividerText="Или зарегистрируйтесь с помощью"
+        otherwise={
+          <Typography variant="caption" textAlign="center">
+            Уже есть аккаунт?{' '}
+            <Link component={RouterLink} to="/authorization" underline="none">
+              Войдите
+            </Link>
+          </Typography>
+        }
+      >
+        {children}
+      </AuthFormTemplate>
+    </Container>
+  </Box>
 )
